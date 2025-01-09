@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { formatNumber } from '@/utils/format'
 
 const Calculator = () => {
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState<string>('')
 
   const handleClick = (value: CalculatorButton) => {
     switch (value) {
@@ -14,7 +14,7 @@ const Calculator = () => {
         try {
           // setResult(String(eval(result) || ''))
           const evaluatedResult = eval(result.replace(/,/g, ''))
-          setResult(formatNumber({ number: evaluatedResult }))
+          setResult(formatNumber({ number: evaluatedResult, decimals: 2 }))
         } catch (error) {
           setResult('Error')
         }
