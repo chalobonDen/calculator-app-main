@@ -3,15 +3,23 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { Theme } from '@/enums/theme'
 
-export const ThemeContext = createContext()
+interface IThemeContextType {
+  theme: Theme | string
+  changeTheme: (theme: Theme | string) => void
+}
+
+export const ThemeContext = createContext<IThemeContextType>({
+  theme: Theme.DEFAULT,
+  changeTheme: () => {},
+})
 
 export const ThemeProvider = ({ children }: any) => {
-  const [theme, setTheme] = useState<Theme | string>(Theme.PRIMARY)
+  const [theme, setTheme] = useState<Theme | string>(Theme.DEFAULT)
   const [isMounted, setIsMounted] = useState<Boolean>(false)
 
   useEffect(() => {
     setIsMounted(true)
-    const storedTheme = localStorage.getItem('theme') || Theme.PRIMARY
+    const storedTheme = localStorage.getItem('theme') || Theme.DEFAULT
     setTheme(storedTheme)
   }, [])
 
