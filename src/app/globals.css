@@ -19,6 +19,8 @@ body {
   }
 
   :root {
+    --text-title: hsl(0, 0%, 100%);
+    --bg-switch: hsl(225, 30%, 21%);
     --background: hsl(224, 26%, 31%);
     --btn-submit: hsl(162, 72%, 54%);
     --text-result: hsl(0, 0%, 100%);
@@ -29,12 +31,14 @@ body {
     --btn-number: hsl(34, 31%, 91%);
     --btn-hover: hsl(0, 0%, 100%);
     --btn-equal: hsl(8, 87%, 64%);
-    --btn-change: hsl(8, 86%, 64%);
+    --btn-change: hsl(6, 93%, 66%);
     --btn-border-b: hsl(17, 9%, 63%);
     --text-equal: hsl(0, 0%, 100%);
   }
 
   .light {
+    --text-title: hsl(226, 7%, 37%);
+    --bg-switch: hsl(0, 6%, 82%);
     --background: hsl(0, 0%, 90%);
     --btn-submit: hsl(217, 84%, 56%);
     --text-result: hsl(52, 10%, 23%);
@@ -51,6 +55,8 @@ body {
   }
 
   .dark {
+    --text-title: hsl(52, 98%, 62%);
+    --bg-switch: hsl(269, 74%, 12%);
     --background: hsl(268, 75%, 9%);
     --btn-submit: hsl(217, 84%, 56%);
     --text-result: hsl(52, 98%, 62%);
@@ -61,7 +67,7 @@ body {
     --btn-number: hsl(269, 48%, 20%);
     --btn-hover: hsl(268, 54%, 44%);
     --btn-equal: hsl(177, 100%, 79%);
-    --btn-change: hsl(27, 94%, 62%);
+    --btn-change: hsl(177, 95%, 78%);
     --btn-border-b: hsl(288, 63%, 34%);
     --text-equal: hsl(0, 0%, 100%);
   }

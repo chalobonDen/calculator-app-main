@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
 import './globals.css'
-import Navbar from '@/components/Navbar'
 import ClientThemeWrapper from '@/context/ClientThemeWrapper'
 import { ThemeProvider } from '@/context/ThemeContext'
 
@@ -33,7 +32,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
           <ClientThemeWrapper>
-            <Navbar />
             {children}
           </ClientThemeWrapper>
         </ThemeProvider>

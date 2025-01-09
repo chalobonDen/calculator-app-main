@@ -2,11 +2,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 
 import { Theme } from '@/enums/theme'
-
-interface IThemeContextType {
-  theme: Theme | string
-  changeTheme: (theme: Theme | string) => void
-}
+import { IThemeContextType } from '@/interfaces/modules/theme'
 
 export const ThemeContext = createContext<IThemeContextType>({
   theme: Theme.DEFAULT,
