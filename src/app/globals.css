@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  :root {
+    --background: hsl(224, 26%, 31%);
+    --btn-submit: hsl(162, 72%, 54%);
+    --text-result: hsl(0, 0%, 100%);
+    --btn-text: hsl(60, 8%, 20%);
+    --bg-secondary: hsl(222, 31%, 13%);
+    --result: hsl(222, 31%, 13%);
+    --btn-delete: hsl(223, 50%, 76%);
+    --btn-number: hsl(34, 31%, 91%);
+    --btn-hover: hsl(0, 0%, 100%);
+    --btn-equal: hsl(8, 87%, 64%);
+    --btn-change: hsl(8, 86%, 64%);
+    --btn-border-b: hsl(17, 9%, 63%);
+    --text-equal: hsl(0, 0%, 100%);
+  }
+
+  .light {
+    --background: hsl(0, 0%, 90%);
+    --btn-submit: hsl(217, 84%, 56%);
+    --text-result: hsl(52, 10%, 23%);
+    --btn-text: hsl(226, 7%, 37%);
+    --bg-secondary: hsl(0, 4%, 83%);
+    --result: hsl(0, 0%, 93%);
+    --btn-delete: hsl(185, 43%, 55%);
+    --btn-number: hsl(48, 9%, 89%);
+    --btn-hover: hsl(0, 0%, 100%);
+    --btn-equal: hsl(27, 100%, 62%);
+    --btn-change: hsl(27, 94%, 62%);
+    --btn-border-b: hsl(25, 9%, 63%);
+    --text-equal: hsl(0, 0%, 100%);
+  }
+
+  .dark {
+    --background: hsl(268, 75%, 9%);
+    --btn-submit: hsl(217, 84%, 56%);
+    --text-result: hsl(52, 98%, 62%);
+    --btn-text: hsl(52, 98%, 62%);
+    --bg-secondary: hsl(0, 4%, 83%);
+    --result: hsl(269, 74%, 12%);
+    --btn-delete: hsl(280, 56%, 44%);
+    --btn-number: hsl(269, 48%, 20%);
+    --btn-hover: hsl(268, 54%, 44%);
+    --btn-equal: hsl(177, 100%, 79%);
+    --btn-change: hsl(27, 94%, 62%);
+    --btn-border-b: hsl(288, 63%, 34%);
+    --text-equal: hsl(0, 0%, 100%);
+  }
+}
