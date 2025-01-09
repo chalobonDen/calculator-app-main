@@ -19,9 +19,9 @@ export const ThemeProvider = ({ children }: any) => {
     setTheme(storedTheme)
   }, [])
 
-  if (!isMounted) {
-    return <>Loading...</>
-  }
+  // if (!isMounted) {
+  //   return <>Loading...</>
+  // }
 
   const changeTheme = (theme: string | Theme) => {
     setTheme(theme)

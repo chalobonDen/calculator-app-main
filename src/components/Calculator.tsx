@@ -29,6 +29,9 @@ const Calculator = () => {
 
   return (
     <div className={cn('mx-auto flex flex-col px-5')}>
+      <label htmlFor="result" className="sr-only">
+        Result
+      </label>
       <input
         type="text"
         className={cn(
