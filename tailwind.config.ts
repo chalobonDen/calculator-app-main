@@ -25,6 +25,8 @@ const config: Config = {
         'btn-text': 'var(--btn-text)',
         'text-title': 'var(--text-title)',
         'bg-switch': 'var(--bg-switch)',
+        'reset-border': 'var(--reset-border)',
+        'equal-border': 'var(--equal-border)',
       },
     },
   },

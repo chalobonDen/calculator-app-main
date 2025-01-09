@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import { CalculatorButton } from '@/enums/calculator'
 import { cn } from '@/lib/utils'
+import { formatNumber } from '@/utils/format'
 
 const Calculator = () => {
   const [result, setResult] = useState('')
@@ -11,7 +12,9 @@ const Calculator = () => {
     switch (value) {
       case CalculatorButton.EQUAL:
         try {
-          setResult(String(eval(result) || ''))
+          // setResult(String(eval(result) || ''))
+          const evaluatedResult = eval(result.replace(/,/g, ''))
+          setResult(formatNumber({ number: evaluatedResult }))
         } catch (error) {
           setResult('Error')
         }
@@ -20,7 +23,9 @@ const Calculator = () => {
         setResult('')
         break
       case CalculatorButton.DELETE:
-        setResult(result?.slice(0, -1))
+        // setResult(result?.slice(0, -1))
+        const updatedResult = result.slice(0, -1).replace(/,/g, '') // Remove last character
+        setResult(updatedResult === '' || updatedResult === '0' ? '' : formatNumber({ number: updatedResult }))
         break
       default:
         setResult(result + value)
@@ -37,6 +42,7 @@ const Calculator = () => {
         className={cn(
           'bg-result text-text-result mb-3 w-full rounded-lg p-3 text-right text-4xl font-bold outline-none',
         )}
+        // value={formatNumber({ number: result })}
         value={result}
         readOnly
       />
@@ -52,16 +58,17 @@ const Calculator = () => {
                 className={cn(
                   'rounded-lg p-3 text-xl font-bold',
                   'btn bg-btn-number',
-                  !isSpecialButton && 'hover:bg-btn-hover text-3xl',
-                  'border-btn-border-b border-b-4',
+                  !isSpecialButton && 'hover:bg-btn-hover border-btn-border-b text-3xl',
+                  'border-b-4',
                   'text-btn-text',
                   (value === CalculatorButton.EQUAL || value === CalculatorButton.RESET) && 'col-span-2',
-                  (value === CalculatorButton.RESET || value === CalculatorButton.DELETE) && 'bg-btn-delete text-white',
-                  value === CalculatorButton.EQUAL && 'bg-btn-equal text-equal',
+                  (value === CalculatorButton.RESET || value === CalculatorButton.DELETE) &&
+                    'bg-btn-delete border-reset-border text-white',
+                  value === CalculatorButton.EQUAL && 'bg-btn-equal text-text-equal border-equal-border',
                 )}
                 onClick={() => handleClick(value)}
               >
-                {value}
+                {value === CalculatorButton.MULTIPLY ? 'x' : value}
               </button>
             )
           })}
